@@ -99,3 +99,60 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+declare -A abbrev
+abbrev=(["bp-dev"]="site-development" ["another-abbv"]="site-development"
+["a-third-abbv-dev"]="site-development" ["b-dev"]="something-else")
+
+# git
+alias gt='git status'
+alias gitlog='git log --all --graph --decorate --oneline --simplify-by-decoration'
+alias gitshowunpusheddiff='git diff origin/master..HEAD'
+alias gitshowunpushedcommits='git log origin/master..HEAD'
+alias gitresethard='git reset --hard HEAD~1'
+alias gitresetsoft='git reset --soft HEAD~1'
+alias gitcm='git checkout master'
+alias gitpom='git checkout master && git pull origin master'
+alias gitcommitamend='git commit --amend'
+alias gitpush='git push origin $(git branch --show-current)'
+alias gitpushforce='git push -f origin $(git branch --show-current)'
+
+gitrebase() {
+       current_branch=$(git branch --show-current)
+       git checkout master && git pull origin master
+       git checkout $current_branch
+       git rebase master
+}
+gitsquash() {
+    echo "squashing the last $1 commits..."
+    # Reset the current branch to the commit just before the last 12:
+    git reset --hard HEAD~$1
+    # HEAD@{1} is where the branch was just before the previous command.
+    # This command sets the state of the index to be as it would just
+    # after a merge from that commit:
+    git merge --squash HEAD@{1}
+    # Commit those squashed changes.  The commit message will be helpfully
+    # prepopulated with the commit messages of all the squashed commits:
+    git commit
+}
+
+
+alias cds='cd ~/source'
+alias addalias='vi ~/.zshrc'
+alias cdm='cd ~/source/maple'
+alias cdf='cd ~/source/maple/frontend'
+alias cdb='cd ~/source/maple/backend'
+alias showalias='grep '"'"'^alias\|()'"'"' ~/.zshrc'
+alias reloadzsrc='source ~/.zshrc'
+alias cditermscripts='cd /Users/adrianmuntean/Library/Application\ Support/iTerm2/Scripts'
+lessjson() {
+    python -m json.tool "$1" | less
+ }
+ 
+# work related
+alias runserver='python manage.py runserver'
+alias buildfrontend='yarn build:dev'
+alias runfrontend='yarn start:dev'
+alias showmigrationsclassifieds='python manage.py showmigrations | sed -n '/classifieds/,/contenttypes/p''
+alias showmigrations='python manage.py showmigrations'
+alias shell='python manage.py shell'
+alias activateenv='source env/bin/activate'
