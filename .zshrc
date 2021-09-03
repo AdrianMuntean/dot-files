@@ -116,6 +116,15 @@ alias gitcommitamend='git commit --amend'
 alias gitpush='git push origin $(git branch --show-current)'
 alias gitpushforce='git push -f origin $(git branch --show-current)'
 
+# gh - need to install gh cli for these to work
+alias gitmyprs='gh pr status'
+alias gitopenrepo='gh repo view --web'
+
+gitopenpr() {
+       current_branch=$(git branch --show-current)
+       gh pr view $current_branch --web
+}
+
 gitrebase() {
        current_branch=$(git branch --show-current)
        git checkout master && git pull origin master
