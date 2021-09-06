@@ -117,8 +117,9 @@ alias gitpush='git push origin $(git branch --show-current)'
 alias gitpushforce='git push -f origin $(git branch --show-current)'
 
 # gh - need to install gh cli for these to work
-alias gitmyprs='gh pr status'
+alias gitshowprstatus='gh pr status'
 alias gitopenrepo='gh repo view --web'
+alias gitshowmyprs='gh pr status | awk -v RS= "/Created by you\n/" | grep -E "#[0-9]{3,7}"'
 
 gitopenpr() {
        current_branch=$(git branch --show-current)
