@@ -131,6 +131,11 @@ gitrebase() {
        git checkout $current_branch
        git rebase master
 }
+
+gitprcheckout() {
+      gh pr checkout $1
+}
+
 gitsquash() {
     echo "squashing the last $1 commits..."
     # Reset the current branch to the commit just before the last 12:
