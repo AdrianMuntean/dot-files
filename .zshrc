@@ -115,6 +115,7 @@ alias gitpom='git checkout master && git pull origin master'
 alias gitcommitamend='git commit --amend'
 alias gitpush='git push origin $(git branch --show-current)'
 alias gitpushforce='git push -f origin $(git branch --show-current)'
+alias gitstashlist='git stash list'
 
 # gh - need to install gh cli for these to work
 alias gitshowprstatus='gh pr status'
