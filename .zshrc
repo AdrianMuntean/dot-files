@@ -151,3 +151,32 @@ alias showmigrationsclassifieds='python manage.py showmigrations | sed -n '/clas
 alias showmigrations='python manage.py showmigrations'
 alias shell='python manage.py shell'
 alias activateenv='source env/bin/activate'
+alias getpods='watch kubectl get pods'
+platforms=(special anotherone meo two)
+deployService() {
+  if [ -n "$1" ]; then
+    echo "Going to deploy '$1'"
+  else
+    echo "You need to supply the first param"
+    return 1
+  fi
+  inarray=$(echo ${platforms[@]} | grep -o "$1" | wc -w)
+  if (( $inarray > 0 ))
+  then
+    if [ "special" = "$1" ]; then
+      export AWS_PROFILE=special
+      aws eks update-kubeconfig --name "composed-name-$1"
+      echo ""
+      echo "Don't forget to update the infra repo and run:"
+      echo "~./source/repo-name/deploy -e $1 -p ~/source/infra"
+    else
+      export AWS_PROFILE=dev
+      aws eks update-kubeconfig --name "another-composed-name-$1"
+      echo ""
+      echo "Don't forget to update the infra repo and run:"
+      echo "~./source/repo-name/deploy -e $1 -p ~/source/infra"
+    fi
+  else
+     echo "Unknown platform '$1'"
+  fi
+}
