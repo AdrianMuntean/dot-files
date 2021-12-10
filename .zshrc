@@ -166,16 +166,16 @@ deployService() {
     if [ "special" = "$1" ]; then
       export AWS_PROFILE=special
       aws eks update-kubeconfig --name "composed-name-$1"
-      echo ""
-      echo "Don't forget to update the infra repo and run:"
-      echo "~./source/repo-name/deploy -e $1 -p ~/source/infra"
     else
       export AWS_PROFILE=dev
       aws eks update-kubeconfig --name "another-composed-name-$1"
-      echo ""
-      echo "Don't forget to update the infra repo and run:"
-      echo "~./source/repo-name/deploy -e $1 -p ~/source/infra"
     fi
+    echo ""
+    echo "Don't forget to update the infra repo and run:"
+    echo "./deploy-local.sh -e $1 -p ~/source/infra"
+    echo ""
+    echo "Command copied to clipboard. Just run 'pbpaste | bash'"
+    echo "./deploy-local.sh -e $1 -p ~/source/infra" | pbcopy
   else
      echo "Unknown platform '$1'"
   fi
