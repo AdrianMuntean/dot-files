@@ -142,6 +142,9 @@ alias cditermscripts='cd /Users/adrianmuntean/Library/Application\ Support/iTerm
 lessjson() {
     python -m json.tool "$1" | less
  }
+search () {
+    grep -lr $1 *
+}
  
 # work related
 alias runserver='python manage.py runserver'
