@@ -183,3 +183,18 @@ deployService() {
      echo "Unknown platform '$1'"
   fi
 }
+
+# Customizations
+
+function aws_prof {
+    local profile="${AWS_PROFILE:=default}"
+    echo "%{$fg_bold[blue]%}aws:(%{$fg[yellow]%}${profile}%{$fg_bold[blue]%})%{$reset_color%} "
+}
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats " %{$fg_bold[blue]%}git:%{$fg[yellow]%}%b%{$reset_color%}"
+
+setopt PROMPT_SUBST
+PROMPT='[$(aws_prof)${vcs_info_msg_0_}] %F{cyan}%1d%f%# '
