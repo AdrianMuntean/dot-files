@@ -155,6 +155,11 @@ alias showmigrations='python manage.py showmigrations'
 alias shell='python manage.py shell'
 alias activateenv='source env/bin/activate'
 alias getpods='watch kubectl get pods'
+
+## kubernetes
+alias k='kubectl'
+alias kctx='kubectx'
+alias watchpods='watch kubectl get pods'
 platforms=(special anotherone meo two)
 deployService() {
   if [ -n "$1" ]; then
