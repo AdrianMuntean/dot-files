@@ -88,6 +88,7 @@ alias gitcm='git checkout master'
 alias gitpom='git checkout master && git pull origin master'
 alias gitcommitamend='git commit --amend --no-edit'
 alias gitpush='git push origin $(git branch --show-current)'
+alias gitpull='git pull origin $(git branch --show-current)'
 alias gitpushforce='git push -f origin $(git branch --show-current)'
 alias gitstashlist='git stash list'
 
