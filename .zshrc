@@ -191,7 +191,7 @@ deployService() {
 }
 
 # Customizations
-
+alias ls="eza --icons=always --color=always --git" # https://github.com/ogham/exa/issues/540
 function aws_prof {
     local profile="${AWS_PROFILE:=default}"
     echo "%{$fg_bold[blue]%}aws:(%{$fg[yellow]%}${profile}%{$fg_bold[blue]%})%{$reset_color%} "
