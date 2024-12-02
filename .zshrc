@@ -157,10 +157,14 @@ alias shell='python manage.py shell'
 alias activateenv='source env/bin/activate'
 alias getpods='watch kubectl get pods'
 
-## kubernetes
+# aws
+alias refreshSSOToken='aws sso login --profile oz-dev'
+
+# kubernetes
 alias k='kubectl'
 alias kctx='kubectx'
 alias watchpods='watch kubectl get pods'
+alias portForward='kubectl port-forward service/pgadmin 8080:80'
 platforms=(special anotherone meo two)
 deployService() {
   if [ -n "$1" ]; then
