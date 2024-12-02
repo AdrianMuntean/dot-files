@@ -1,3 +1,4 @@
+" Before using the colors cheme you need to download it (https://github.com/sjl/badwolf/blob/master/colors/badwolf.vim) and place it under ~/.vim/colors/ 
 colorscheme badwolf
 syntax enable
 set cursorline
