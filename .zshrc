@@ -194,6 +194,9 @@ deployService() {
   fi
 }
 
+# disk usage
+alias diskusage='du -h -d 1 ~/Library | sort -hr'
+
 # Customizations
 alias ls="eza --icons=always --color=always --git" # https://github.com/ogham/exa/issues/540
 function aws_prof {
