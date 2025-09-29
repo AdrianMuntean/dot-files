@@ -1,6 +1,7 @@
 # Install:
 # https://github.com/ezh/fzf-ls
 # https://github.com/eza-community/eza/blob/main/INSTALL.md
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
