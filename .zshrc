@@ -1,6 +1,6 @@
 # Install:
 # https://github.com/ezh/fzf-ls
-# https://github.com/ogham/exa
+# https://github.com/eza-community/eza/blob/main/INSTALL.md
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
