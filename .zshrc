@@ -1,3 +1,6 @@
+# Install:
+# https://github.com/ezh/fzf-ls
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # see https://github.com/ohmyzsh/ohmyzsh
