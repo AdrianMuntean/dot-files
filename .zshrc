@@ -71,6 +71,7 @@ ZSH_THEME="agnoster"
 plugins=(
   git
   forklift
+  macos
 )
 
 source $ZSH/oh-my-zsh.sh
