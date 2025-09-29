@@ -210,4 +210,5 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats " %{$fg_bold[blue]%}git:%{$fg[yellow]%}%b%{$reset_color%}"
 
 setopt PROMPT_SUBST
-PROMPT='[$(aws_prof)${vcs_info_msg_0_}] %F{cyan}%1d%f%# '
+# PROMPT='[$(aws_prof)${vcs_info_msg_0_}] %F{cyan}%1d%f%# '
+PROMPT='[%F{magenta}${vcs_info_msg_0_}] %F{cyan}%1d%f%# '
